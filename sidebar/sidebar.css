@@ -1,0 +1,168 @@
+#button-section {
+  justify-content: center;
+}
+
+#download-button {
+  width: 50%;
+}
+
+#clear-button {
+  width: 50%;
+}
+
+#top-message {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.document {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.document-input {
+  margin: 0;
+  padding: 5px;
+  min-width: 65%;
+  border: none;
+  height: inherit;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  vertical-align: middle;
+  justify-content: space-between;
+}
+
+.form-options {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  height: inherit;
+}
+
+.undo-button {
+  margin-left: auto;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cross {
+  height: 20px;
+  position: relative;
+  width: 4px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  top: 4px;
+}
+
+.cross:after {
+  width: 20px;
+  position: absolute;
+  background: black;
+  content: "";
+  height: 4px;
+  left: -8px;
+  top: 7.5px;
+}
+
+.cross:hover {
+  cursor: pointer;
+}
+
+.cross-toggle {
+  background: black;
+}
+
+.add-button {
+  display: none;
+}
+
+.remove-button {
+  display: none;
+}
+
+@media screen and (max-width: 310px) {
+  form {
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: none;
+  }
+
+  .document-input {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .add-button {
+    display: block;
+    width: 100%;
+  }
+
+  .remove-button {
+    display: block;
+    width: 100%;
+  }
+
+  .undo-button {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  .cross {
+    display: none;
+  }
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.inline-error {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+#error-log-button {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.error-log-pop {
+  animation: pop 2s linear 1;
+}
+
+@keyframes pop {
+  25% {
+    transform: scale(1.4);
+    background-color: rgb(241, 78, 78);
+  }
+}

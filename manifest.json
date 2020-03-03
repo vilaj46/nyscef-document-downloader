@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "NYSCEF",
+  "version": "1.4",
+  "description": "Adds the ability to download pdf files onto your computer.",
+  "icons": {
+    "96": "icons/FCP_logo_96x96.png"
+  },
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.iapps.courts.state.ny.us/nyscef/DocumentList*"],
+      "js": [
+        "content/scripts/utils.js",
+        "content/scripts/messages.js",
+        "content/scripts/Button.js",
+        "content/scripts/Spinner.js",
+        "content/scripts/index.js"
+      ],
+      "all_frames": false,
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "sidebar_action": {
+    "default_title": "NYSCEF Document Downloader",
+    "default_panel": "sidebar/sidebar.html",
+    "default_icon": "icons/FCP_logo_96x96.png"
+  },
+  "web_accessible_resources": ["content/index.css"]
+}
