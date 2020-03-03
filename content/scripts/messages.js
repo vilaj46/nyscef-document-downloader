@@ -8,7 +8,7 @@ function sendAddOrRemoveMessage(button, data) {
   })
     .then(() => {
       if (button.name === 'Add') {
-        showRemoveButton(button);
+        styleRemoveButton(button);
       } else {
         styleAddButton(button);
       }

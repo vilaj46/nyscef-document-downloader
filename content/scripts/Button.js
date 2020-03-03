@@ -33,7 +33,7 @@ function styleAddButton(button) {
   button.name = 'Add';
 }
 
-function showRemoveButton(button) {
+function styleRemoveButton(button) {
   button.classList.remove('add');
   button.classList.add('remove');
   button.innerText = 'Remove from List';
@@ -44,18 +44,19 @@ function resetSelectedButtons() {
   const buttons = Array.from(document.getElementsByClassName('button'));
   buttons.forEach(button => {
     const classList = Array.from(button.classList);
-    if (classList.includes('remove')) {
+    if (button.name === 'Remove') {
       styleAddButton(button);
     }
   });
 }
 
 function updateDocumentStatus(id) {
+  const button = document.getElementById(id);
   const buttons = document.querySelectorAll('.button');
   buttons.forEach(button => {
     if (button.id === id) {
       if (Array.from(button.classList).includes('add')) {
-        showRemoveButton(button);
+        styleRemoveButton(button);
       } else {
         styleAddButton(button);
       }
